@@ -7,4 +7,7 @@
 
 -record('gold_type', {anyAttribs, 'date', 'price'}).
 -record('gold_store', {anyAttribs, 'gold_type'}).
+-record('currency_value',{anyAttribs,'something','date','value'}).
+-record('ExchangeRatesSeries/Rates',{anyAttribs,'currency_value'}).
 -record('ArrayOfCenaZlota',{anyAttribs,'gold_store'}).
+-record('ExchangeRatesSeries',{anyAttribs,'table','currency_name','currency_code','ExchangeRatesSeries/Rates'}).
