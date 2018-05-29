@@ -21,18 +21,18 @@ List of functions in **erlsom**
 | 4  | compile_xsd_file/2         |  |
 | 5  | scan/2                     | :heavy_check_mark: |
 | 6  | scan/3                     |  |
-| 7  | scan_file/2                |  |
-| 8  | write/2                    |  |
+| 7  | scan_file/2                | :heavy_check_mark: |
+| 8  | write/2                    | :heavy_check_mark: |
 | 9  | write/3                    |  |
-| 10 | write_xsd_hrl_file/3       |  |
-| 11 | parse_sax/4                |  |
-| 12 | simple_form/1              |  |
-| 13 | simple_form/2              |  |
-| 14 | erlsom_lib:toUnicode/1     |  |
+| 10 | write_xsd_hrl_file/3       | :heavy_check_mark: |
+| 11 | parse_sax/4                | :heavy_check_mark: |
+| 12 | simple_form/1              | :heavy_check_mark: |
+| 13 | simple_form/2              |  ??
+| 14 | erlsom_lib:toUnicode/1     |  ??
 | 15 | erlsom_lib:find_xsd/4      |  |
-| 16 | erlsom_lib:detect_encoding/1 |  |
-| 17 | erlsom_ucs:from_utf8/1       |  |
-| 18 | erlsom_ucs:from_utf16le      |  |
-| 19 | erlsom_ucs:from_utf16be      |  |
+| 16 | erlsom_lib:detect_encoding/1 | :heavy_check_mark: |
+| 17 | erlsom_ucs:from_utf8/1       | ??
+| 18 | erlsom_ucs:from_utf16le      | ??
+| 19 | erlsom_ucs:from_utf16be      | ??
 
 

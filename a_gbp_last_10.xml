@@ -1,0 +1,7 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<ExchangeRatesSeries xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Table>A</Table>
+<Currency>funt szterling</Currency>
+<Code>GBP</Code>
+<Rates><Rate><No>094/A/NBP/2018</No><EffectiveDate>2018-05-16</EffectiveDate><Mid>4.8875</Mid></Rate><Rate><No>095/A/NBP/2018</No><EffectiveDate>2018-05-17</EffectiveDate><Mid>4.9093</Mid></Rate><Rate><No>096/A/NBP/2018</No><EffectiveDate>2018-05-18</EffectiveDate><Mid>4.9117</Mid></Rate><Rate><No>097/A/NBP/2018</No><EffectiveDate>2018-05-21</EffectiveDate><Mid>4.9071</Mid></Rate><Rate><No>098/A/NBP/2018</No><EffectiveDate>2018-05-22</EffectiveDate><Mid>4.8814</Mid></Rate><Rate><No>099/A/NBP/2018</No><EffectiveDate>2018-05-23</EffectiveDate><Mid>4.9034</Mid></Rate><Rate><No>100/A/NBP/2018</No><EffectiveDate>2018-05-24</EffectiveDate><Mid>4.9056</Mid></Rate><Rate><No>101/A/NBP/2018</No><EffectiveDate>2018-05-25</EffectiveDate><Mid>4.9061</Mid></Rate><Rate><No>102/A/NBP/2018</No><EffectiveDate>2018-05-28</EffectiveDate><Mid>4.9089</Mid></Rate><Rate><No>103/A/NBP/2018</No><EffectiveDate>2018-05-29</EffectiveDate><Mid>4.9356</Mid></Rate></Rates></ExchangeRatesSeries>

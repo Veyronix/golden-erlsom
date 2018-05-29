@@ -16,6 +16,11 @@
 -export([n_last_rates_of_currency/2]).
 -export([when_currency_was_the_most_valuable_in_30_days/1]).
 
+% tests
+-export([test/0,test_of_detect_encoding/0,test_of_parse_sax/0,test_of_scan_file/0,test_of_simple_form/0,test_of_Unicode/0,test_of_write/0,
+        test_of_write_xsd_hrl_file/0]).
+% 
+
 when_most_valuable([],{Max_date, Max_value}) -> {Max_date, Max_value};
 when_most_valuable(Values, {Max_date, Max_value}) ->
     [#currency_value{date = Data, value = Cena} | T] = Values,
@@ -95,3 +100,57 @@ print_gold_info(#gold_type{date = Data, price = Cena}) ->
 formatDate(undefined) -> "<unknown>";
 formatDate(Date) -> Date.
 %%%-------------------------------------------------------------------
+% examples of functions
+
+
+test_of_scan_file() ->
+    {ok, Model} = erlsom:compile_xsd_file("ExchangeRatesSeries.xsd"),
+    {ok, Out, Rest} = erlsom:scan_file("a_gbp_last_10.xml", Model).
+
+test_of_write() ->
+    inets:start(),
+    {ok, {{Version, 200, ReasonPhrase}, Headers, Body}} =
+        httpc:request("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10/?format=xml"),
+    {ok, Model} = erlsom:compile_xsd_file("ExchangeRatesSeries.xsd"),
+    {ok, Result, _} = erlsom:scan(Body, Model),
+    {ok,Xml} = erlsom:write(Result,Model,[]).
+
+
+test_of_write_xsd_hrl_file() ->
+    erlsom:write_xsd_hrl_file("ExchangeRatesSeries.xsd","file_with_records.txt",[]).
+
+
+% potwierdzenie czy na pewno jest zestawienie z 10 dni wartosci waluty
+test_of_parse_sax() ->
+    inets:start(),
+    {ok, {{Version, 200, ReasonPhrase}, Headers, Body}} =
+    httpc:request("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10/?format=xml"),
+    erlsom:parse_sax(Body, 0, fun(Event, Acc) -> case Event of {startElement,_,"Rate",_,_} ->  Acc+1; _ -> Acc end end).
+
+
+test_of_simple_form() ->
+    inets:start(),
+    {ok, {{Version, 200, ReasonPhrase}, Headers, Body}} =
+    httpc:request("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/5/?format=xml"),
+    erlsom:simple_form(Body).
+
+
+% jak to przetestowac?
+test_of_Unicode()->
+    inets:start(),
+    {ok, {{Version, 200, ReasonPhrase}, Headers, Body}} =
+    httpc:request("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/5/?format=xml"),
+    erlsom_lib:toUnicode(Body).
+
+
+test_of_detect_encoding()->
+    erlsom_lib:detect_encoding("ExchangeRatesSeries.xsd").
+    % erlsom_lib:find_xsd("ExchangeRatesSeries.xsd", "/", 'undefined', 'undefined').    
+
+% ??
+test() ->
+    inets:start(),
+    {ok, {{Version, 200, ReasonPhrase}, Headers, Body}} =
+    httpc:request("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/5/?format=xml"),
+    erlsom_ucs:from_utf16le(Body).
+
