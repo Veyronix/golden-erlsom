@@ -9,7 +9,6 @@ Actual functionality:
 gold_last_30()
 gbp_last_10()
 n_last_rates_of_currency(N, Currency)
-when_currency_was_the_most_valuable_in_30_days(Currency)
 when_currency_was_the_most_valuable_in_n_days(N, Currency)
 
 % test functions
