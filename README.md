@@ -5,10 +5,21 @@ Main aim - show usage of **erlsom** on simple use cases
 
 Actual functionality:
 ```erlang
-gbp_last_10().
-gold_last_30().
-n_last_rates_of_currency(N, Currency).
-when_currency_was_the_most_valuable_in_30_days(Currency).
+% user interface
+gold_last_30()
+gbp_last_10()
+n_last_rates_of_currency(N, Currency)
+when_currency_was_the_most_valuable_in_30_days(Currency)
+
+% tests
+test()
+test_of_detect_encoding()
+test_of_parse_sax()
+test_of_scan_file()
+test_of_simple_form/()
+test_of_Unicode()
+test_of_write() 
+test_of_write_xsd_hrl_file()
 ```
 
 List of functions in **erlsom**

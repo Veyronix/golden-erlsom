@@ -1,0 +1,6 @@
+# Object files and executables
+*.o
+*.beam
+
+# IntelliJ .idea folder
+.idea/
