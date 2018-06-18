@@ -147,7 +147,6 @@ test_of_simple_form() ->
     Body = request_xml(Path),
     erlsom:simple_form(Body).
 
-% jak to przetestowac?
 test_of_toUnicode() ->
     Path = "http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/5/?format=xml",
     Body = request_xml(Path),
@@ -155,9 +154,7 @@ test_of_toUnicode() ->
 
 test_of_detect_encoding() ->
     erlsom_lib:detect_encoding("../xml/ExchangeRatesSeries.xsd").
-    % erlsom_lib:find_xsd("ExchangeRatesSeries.xsd", "/", 'undefined', 'undefined').    
 
-% ??
 test_of_from_utf16le() ->
     Path = "http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/5/?format=xml",
     Body = request_xml(Path),
