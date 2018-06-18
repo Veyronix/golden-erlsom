@@ -23,6 +23,6 @@ test_of_from_utf16le()
 ```
 
 If you want to obtain some information about **erlsom**
-take a look at our presentation slides [here](../blob/master/golden-erlsom.pdf)
+take a look at our presentation slides [here](golden-erlsom.pdf)
 
 
