@@ -128,7 +128,7 @@ test_of_write() ->
     {ok, _Xml} = erlsom:write(Result, Model, []).
 
 test_of_write_xsd_hrl_file() ->
-    erlsom:write_xsd_hrl_file("../xml/ExchangeRatesSeries.xsd","../xml/generated_records.txt",[]).
+    erlsom:write_xsd_hrl_file("../xml/ExchangeRatesSeries.xsd","../xml/generated_records.erl",[]).
 
 test_of_parse_sax() ->
     Path = "http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/11/?format=xml",
@@ -140,6 +140,7 @@ test_of_parse_sax() ->
                 _ -> Acc
             end
         end,
+    erlsom:parse_sax(Body, [], fun(Event, Acc) -> io:format("~p~n", [Event]), Acc end),
     erlsom:parse_sax(Body, 0, NumOfRates).
 
 test_of_simple_form() ->
